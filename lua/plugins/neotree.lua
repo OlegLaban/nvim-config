@@ -9,7 +9,7 @@ return {
     config = function()
         local neotree = require("neo-tree")
         vim.keymap.set('n', 'e', ':Neotree left')
-        vim.keymap.set('n', 'o', ':Neotree float git_status')
+--        vim.keymap.set('n', 'o', ':Neotree float git_status')
         neotree.setup({
             filesystem = {
                 follow_current_file = {
@@ -23,12 +23,7 @@ return {
                     show_hidden_count = true,
                     hide_dotfiles = false,
                     hide_gitignored = false,
-                },
-                window = {
-                    mappings = {
-                        ["<cr>"] = "open_tabnew",
-                    }
-                }
+                }, 
             }
         })
     end
