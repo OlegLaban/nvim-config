@@ -19,7 +19,7 @@ return {
         vim.keymap.set('n', 'gb', builtin.git_branches, {})
         vim.keymap.set('n', 'gc', builtin.git_commits, {})
         vim.keymap.set('n', 'gs', builtin.git_status, {})
-        vim.keymap.set('n', 'ls', builtin.lsp_document_symbols, {})
+        -- vim.keymap.set('n', 'ls', builtin.lsp_document_symbols, {})
         vim.keymap.set('n', 'fx', builtin.treesitter, {})
         vim.keymap.set('n', 'fs', builtin.spell_suggest, {})
         vim.keymap.set('n', 'gd', builtin.lsp_definitions,
