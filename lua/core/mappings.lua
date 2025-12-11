@@ -12,3 +12,10 @@ for _, mode in ipairs({'n','i','v'}) do
   vim.keymap.set(mode, '<Right>', '<Cmd>echo "Use - l"<CR>', opts)
 end
 
+function DebugNearest()
+  vim.g["test#go#runner"] = "delve"
+  vim.cmd("TestNearest")
+  vim.cmd("unlet g:test#go#runner")
+end
+
+vim.keymap.set("n", "t<C-d>", function() DebugNearest() end, { silent = true })

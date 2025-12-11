@@ -1,6 +1,8 @@
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+vim.opt.swapfile = false
+
 vim.opt.mouse = "a"
 vim.opt.mousefocus = true
 
