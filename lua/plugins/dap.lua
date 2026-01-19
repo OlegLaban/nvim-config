@@ -20,32 +20,40 @@ end
 dap.listeners.before.event_exited["dapui_config"] = function()
   dapui.close()
 end
-require('dap-go').setup{
+        local dapgo = require("dap-go")
+        dapgo.setup({
             delve = {
                 path = "dlv",
-                initialize_timeout_sec = 20,
                 port = "2345",
-                args = {},
-                build_flags = {},
-                detached = vim.fn.has("win32") == 0,
-                cwd = nil,
-            },
-            tests = {
-                verbose = false,
-            },
-        }
-
-        -- Конфигурации для Go
-        local dap = require('dap')
-        dap.configurations.go = {
-            {
-                type = "go",
-                name = "Attach remote",
-                mode = "remote",
-                request = "attach",
-            },
-        }
+            }
+        })
+        -- dapgo.setup{
+        --     delve = {
+        --         path = "dlv",
+        --         initialize_timeout_sec = 20,
+        --         port = "2345",
+        --         args = {},
+        --         build_flags = {},
+        --         detached = vim.fn.has("win32") == 0,
+        --         cwd = nil,
+        --     },
+        --     tests = {
+        --         verbose = false,
+        --     },
+        -- }
+        --
+        -- -- Конфигурации для Go
+        -- local dap = require('dap')
+        -- dap.configurations.go = {
+        --     {
+        --         type = "go",
+        --         name = "Attach remote",
+        --         mode = "remote",
+        --         request = "attach",
+        --     },
+        -- }
 -- горячие клавиши
+    vim.keymap.set("n", "<F4>", function() dapgo.debug_test() end)
     vim.keymap.set("n", "<F5>", function() dap.continue() end)
     vim.keymap.set("n", "<F10>", function() dap.step_over() end)
     vim.keymap.set("n", "<F11>", function() dap.step_into() end)

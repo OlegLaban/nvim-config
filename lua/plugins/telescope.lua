@@ -10,7 +10,7 @@ return {
     },
     branch = "0.1.x",
     config = function()
-        local builtin = require('telescope.builtin')
+        local builtin = require('telescope.builtin') 
         vim.keymap.set('n', '-', ":Telescope file_browser")
         vim.keymap.set('n', 'ff', builtin.find_files, {})
         vim.keymap.set('n', 'fw', builtin.live_grep, {})
@@ -22,7 +22,6 @@ return {
         -- vim.keymap.set('n', 'ls', builtin.lsp_document_symbols, {})
         vim.keymap.set('n', 'fx', builtin.treesitter, {})
         vim.keymap.set('n', 'fs', builtin.spell_suggest, {})
-        vim.keymap.set('n', 'gd', builtin.lsp_definitions,
-                    {noremap = true, silent = true})
+        vim.keymap.set('n', 'gd', builtin.lsp_definitions, {noremap = true, silent = true})
     end
 }
